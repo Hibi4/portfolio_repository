@@ -1,7 +1,7 @@
 /* Global variables */
 :root {
-	--text-color: black;
-	--heading-color:black;
+	/* --text-color: white;
+	--heading-color:white; */
 	/* Colors */
 	--gray-0: #090b11;
 	--gray-50: #141925;
@@ -76,8 +76,8 @@
 }
 
 :root.theme-dark {
-	--text-color: white; 
-	--heading-color:white;
+	/*--text-color: white; 
+	--heading-color:white; */
 
 	--gray-0: #ffffff;
 	--gray-50: #f3f4f7;
