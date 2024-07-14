@@ -1,7 +1,8 @@
 /* Global variables */
 :root {
-	/* --text-color: white;
-	--heading-color:white; */
+	--contact-bg-color: var(--gray-800);
+	--heading-color: var(--gray-100);
+	
 	/* Colors */
 	--gray-0: #090b11;
 	--gray-50: #141925;
@@ -76,8 +77,8 @@
 }
 
 :root.theme-dark {
-	/*--text-color: white; 
-	--heading-color:white; */
+	--contact-bg-color: inherit;
+	--heading-color: var(--gray-100);
 
 	--gray-0: #ffffff;
 	--gray-50: #f3f4f7;
