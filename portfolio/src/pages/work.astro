@@ -1,15 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from '../components/ContactCTA.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
-import Hero from '../components/Hero.astro';
-import Grid from '../components/Grid.astro';
+import ContactCTA from "../components/ContactCTA.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
 
-const projects = (await getCollection('work')).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+const projects = (await getCollection("work")).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
 ---
 
@@ -20,11 +20,126 @@ const projects = (await getCollection('work')).sort(
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
 			<Hero
-				title="My Work"
-				tagline="See my most recent projects below to get an idea of my past experience."
+				title="Mes projets personnels"
+				tagline="Une liste de l'ensemble de mes projets personnels codés durant ces derniers temps.Vous pouvez retrouver l'ensemble de mes projets sur mon GitHub."
 				align="start"
 			/>
-			<Grid variant="offset">
+			<section>
+				<div class="project-grid">
+					<div class="project-card">
+						<h2 class="project-title">FrontendMentor</h2>
+						<p class="project-description">
+							Quelques projets fait par moi sélectionné sur le site FrontendMentor.com.
+						</p>
+						<div class="project-tags">
+							<span class="tag">HTML</span>
+							<span class="tag">CSS</span>
+							<span class="tag">JS</span>
+							<span class="tag">REACT</span>
+						</div>
+						<a
+							href="https://github.com/yourusername/project1"
+							class="github-link"
+							target="_blank"
+							rel="noopener noreferrer">View on GitHub</a
+						>
+					</div>
+					<div class="project-card">
+						<h2 class="project-title">Project 2</h2>
+						<p class="project-description">
+							Introduction à Flask en suivant la documentation.
+						</p>
+						<div class="project-tags">
+							<span class="tag">Python</span>
+						</div>
+						<a
+							href="https://github.com/yourusername/project2"
+							class="github-link"
+							target="_blank"
+							rel="noopener noreferrer">View on GitHub</a
+						>
+					</div>
+					<div class="project-card">
+						<h2 class="project-title">Project 3</h2>
+						<p class="project-description">
+							Je me suis inspiré de la documentation de TalwindCSS pour réaliser ce projet et faire
+								quelques défis.
+						</p>
+						<div class="project-tags">
+							<span class="tag">HTML</span>
+						</div>
+						<a
+							href="https://github.com/yourusername/project2"
+							class="github-link"
+							target="_blank"
+							rel="noopener noreferrer">View on GitHub</a
+						>
+					</div>
+					<!-- Add more project cards as needed -->
+				</div>
+				<style>
+					body {
+						font-family: Arial, sans-serif;
+						line-height: 1.6;
+						color: #333;
+						max-width: 1200px;
+						margin: 0 auto;
+						padding: 20px;
+					}
+					h1 {
+						text-align: center;
+						margin-bottom: 30px;
+					}
+					.project-grid {
+						display: grid;
+						grid-template-columns: repeat(
+							auto-fit,
+							minmax(300px, 1fr)
+						);
+						gap: 20px;
+					}
+					.project-card {
+						border: 1px solid #ddd;
+						border-radius: 8px;
+						padding: 20px;
+						display: flex;
+						flex-direction: column;
+					}
+					.project-title {
+						font-size: 1.5em;
+						margin-bottom: 10px;
+					}
+					.project-description {
+						margin-bottom: 15px;
+						flex-grow: 1;
+					}
+					.project-tags {
+						display: flex;
+						flex-wrap: wrap;
+						gap: 8px;
+						margin-bottom: 15px;
+					}
+					.tag {
+						background-color: #f0f0f0;
+						padding: 5px 10px;
+						border-radius: 20px;
+						font-size: 0.8em;
+					}
+					.github-link {
+						display: inline-block;
+						background-color: #24292e;
+						color: white;
+						padding: 10px 15px;
+						text-decoration: none;
+						border-radius: 5px;
+						transition: background-color 0.3s;
+					}
+					.github-link:hover {
+						background-color: #555;
+					}
+				</style>
+			</section>
+			<!-- <Grid variant="offset">
 				{
 					projects.map((project) => (
 						<li>
@@ -32,7 +147,7 @@ const projects = (await getCollection('work')).sort(
 						</li>
 					))
 				}
-			</Grid>
+			</Grid> -->
 		</main>
 		<ContactCTA />
 	</div>
