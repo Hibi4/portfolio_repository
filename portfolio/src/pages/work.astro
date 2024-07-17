@@ -21,7 +21,7 @@ const projects = (await getCollection("work")).sort(
 		<main class="wrapper stack gap-8">
 			<Hero
 				title="Mes projets personnels"
-				tagline="Une liste de ."
+				tagline="Une liste de l'ensemble de mes projets personnels codés durant ces derniers temps. Vous pouvez retrouver l'ensemble de mes projets sur mon GitHub."
 				align="start"
 			/>
 			<section>
@@ -33,10 +33,10 @@ const projects = (await getCollection("work")).sort(
 							Quelques projets fait par moi sélectionné sur le site FrontendMentor.com.
 						</p>
 						<div class="project-tags">
-							<span class="tag">HTML</span>
-							<span class="tag">CSS</span>
-							<span class="tag">JS</span>
-							<span class="tag">REACT</span>
+							<span class="tag" >HTML</span>
+							<span class="tag" >CSS</span>
+							<span class="tag" >JS</span>
+							<span class="tag" >REACT</span>
 						</div>
 						<a
 							href="https://github.com/yourusername/project1"
@@ -46,9 +46,9 @@ const projects = (await getCollection("work")).sort(
 						>
 					</div>
 					<div class="project-card">
-						<h2 class="project-title">Project 2</h2>
+						<h2 class="project-title">Introduction à Flask</h2>
 						<p class="project-description">
-							Introduction à Flask en suivant la documentation.
+							Introduction à Flask en suivant la documentation sur le site officielle.
 						</p>
 						<div class="project-tags">
 							<span class="tag">Python</span>
@@ -61,7 +61,7 @@ const projects = (await getCollection("work")).sort(
 						>
 					</div>
 					<div class="project-card">
-						<h2 class="project-title">Project 3</h2>
+						<h2 class="project-title">Introduction à TalwindCSS</h2>
 						<p class="project-description">
 							Je me suis inspiré de la documentation de TalwindCSS pour réaliser ce projet et faire
 								quelques défis.
@@ -76,17 +76,27 @@ const projects = (await getCollection("work")).sort(
 							rel="noopener noreferrer">View on GitHub</a
 						>
 					</div>
+					<div class="project-card">
+						<h2 class="project-title">Introduction à React</h2>
+						<p class="project-description">
+							En suivant les explications de <a href="w3school.com">w3school</a> sur la partie React, j'ai pu réaliser ces défis.
+						</p>
+						<div class="project-tags">
+							<span class="tag">React</span>
+							<span class="tag" >Javascript</span>
+						</div>
+						<a
+							href="https://gitlab.com/diallo5/react/-/tree/main/BMI_project/bmi_react?ref_type=heads"
+							class="github-link"
+							target="_blank"
+							rel="noopener noreferrer">View on Gitlab</a
+						>
+					</div>
+					
 					<!-- Add more project cards as needed -->
 				</div>
 				<style>
-					/*body {
-						/* font-family: Arial, sans-serif;
-						line-height: 1.6; */ 
-						/*color: #333;*/
-						/* max-width: 1200px; */ 
-						/* margin: 0 auto;*/
-						/*padding: 20px;*/
-					} */
+					
 					h1 {
 						text-align: center;
 						margin-bottom: 30px;
@@ -125,6 +135,8 @@ const projects = (await getCollection("work")).sort(
 						padding: 5px 10px;
 						border-radius: 20px;
 						font-size: 0.8em;
+						color: var(--tag-color);
+						font-size: medium;
 					}
 					.github-link {
 						display: inline-block;
@@ -137,6 +149,11 @@ const projects = (await getCollection("work")).sort(
 					}
 					.github-link:hover {
 						background-color: #555;
+					}
+					.tag:hover {
+						background-color: blueviolet;
+						color: white;
+						cursor: pointer;
 					}
 				</style>
 			</section>
