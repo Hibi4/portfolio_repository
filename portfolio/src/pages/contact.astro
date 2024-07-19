@@ -11,12 +11,15 @@ import ContactCTA from "../components/ContactCTA.astro";
 >
     <div class="contact">
         <main class="wrapper contact">
-
-            <section class="contact-page" style="background-color: var(--contact-bg-color)">
+            <section
+                class="contact-page"
+                style="background-color: var(--contact-bg-color)"
+            >
                 <div class="container">
-                    <h2 >Laissez un commentaire</h2>
+                    <h2>Laissez un commentaire</h2>
                     <p>
-                        Veuillez laisser un commentaire pour toute collaboration ou juste un bonjour amical!
+                        Veuillez laisser un commentaire pour toute collaboration
+                        ou juste un bonjour amical!
                     </p>
                     <form
                         id="contact-form"
@@ -38,12 +41,13 @@ import ContactCTA from "../components/ContactCTA.astro";
                         <textarea id="message" name="message" rows="5" required
                         ></textarea>
 
+                        <input type="hidden" name="_redirect" value="google.com">
+
                         <button type="submit">Send</button>
                     </form>
                 </div>
             </section>
             <ContactCTA />
-            
         </main>
         <style>
             .contact-page {
