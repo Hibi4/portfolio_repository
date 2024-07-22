@@ -16,14 +16,14 @@ import ContactCTA from "../components/ContactCTA.astro";
                 style="background-color: var(--contact-bg-color)"
             >
                 <div class="container">
-                    <h2>Laissez un commentaire</h2>
+                    <h2 id="comment__title">Laissez un commentaire</h2>
                     <p>
                         Veuillez laisser un commentaire pour toute collaboration
                         ou juste un bonjour amical!
                     </p>
                     <form
                         id="contact-form"
-                        action="https://formspree.io/f/mwpevepj"
+                        action="https://formspree.io/f/xxxxxx"
                         method="POST"
                     >
                         <label for="name">Name</label>
@@ -41,8 +41,11 @@ import ContactCTA from "../components/ContactCTA.astro";
                         <textarea id="message" name="message" rows="5" required
                         ></textarea>
 
-                        <input type="hidden" name="_redirect" value="google.com">
-
+                        <!-- <input type="hidden" name="_redirect" value="google.com"> -->
+                         
+                        <!-- <input type="hidden" name="_next" value="https://www.google.com"> -->
+                        <input type="hidden" name="_next" value="/about.astro/" />
+                        
                         <button type="submit">Send</button>
                     </form>
                 </div>
@@ -108,6 +111,12 @@ import ContactCTA from "../components/ContactCTA.astro";
                 background-color: yellow;
                 color: black;
                 font-weight: 700;
+            }
+
+            @media screen and (max-width: 600px) {
+            #comment__title {
+                text-align: center;
+                font-size: medium;
             }
         </style>
     </div>
