@@ -11,10 +11,11 @@ import ContactCTA from "../components/ContactCTA.astro";
 >
     <div class="contact">
         <main class="wrapper contact">
-            <section
-                class="contact-page"
+            <!--<section
+                class="contact-page font-sans bg-gray-200 m-2.5 p-2.5"
                 style="background-color: var(--contact-bg-color)"
-            >
+        > -->
+        <section class="contact-page font-sans bg-gray-200 m-2.5 p-2.5" style="background-color: var(--contact-bg-color)">
                 <div class="container">
                     <h2 id="comment__title">Laissez un commentaire</h2>
                     <p>
@@ -41,6 +42,7 @@ import ContactCTA from "../components/ContactCTA.astro";
                         <textarea id="message" name="message" rows="5" required
                         ></textarea>
 
+                        <!-- https://docs.astro.build/en/recipes/i18n/ -->
                         <!-- <input type="hidden" name="_redirect" value="google.com"> -->
                          
                         <!-- <input type="hidden" name="_next" value="https://www.google.com"> -->
@@ -54,8 +56,8 @@ import ContactCTA from "../components/ContactCTA.astro";
         </main>
         <style>
             .contact-page {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
+                /* font-family: Arial, sans-serif; */ 
+                /*background-color: #f4f4f4;*/
                 margin: 10px;
                 padding: 10px;
             }
@@ -66,6 +68,10 @@ import ContactCTA from "../components/ContactCTA.astro";
                 background-color: #fff;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                 border-radius: 8px;
+            }
+
+            #comment__title {
+                font-size: 2rem;
             }
 
             h2 {
