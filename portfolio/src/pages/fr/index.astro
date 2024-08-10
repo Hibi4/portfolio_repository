@@ -2,24 +2,24 @@
 import { getCollection } from 'astro:content';
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro'; // Make sure the file exists in the specified location and the path is correct.
 
 // Component Imports
-import CallToAction from '../components/CallToAction.astro';
-import Grid from '../components/Grid.astro';
-import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import Grid from '../../components/Grid.astro';
+import Hero from '../../components/Hero.astro';
+import Icon from '../../components/Icon.astro';
 
 // Page section components
-import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import Skills from '../../components/Skills.astro';
 
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<meta http-equiv="refresh" content="0;url=/en/" />
+<!-- <meta http-equiv="refresh" content="0;url=/en/" /> -->
 
 <BaseLayout>
 	<div class="stack gap-20 lg:gap-48">
@@ -48,7 +48,7 @@ import Skills from '../components/Skills.astro';
 
 				<div class="cta">
 					<CallToAction href="/work/">
-						View All
+						Voir tout
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>

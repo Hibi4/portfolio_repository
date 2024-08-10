@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import Hero from "../../components/Hero.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+---
+
+<BaseLayout
+    title="Contact "
+    description="The page to allow users, visitors to contact me."
+>
+    <div class="contact">
+        <main class="wrapper contact">
+            <!--<section
+                class="contact-page font-sans bg-gray-200 m-2.5 p-2.5"
+                style="background-color: var(--contact-bg-color)"
+        > -->
+        <section class="contact-page font-sans bg-gray-200 m-2.5 p-2.5" style="background-color: var(--contact-bg-color)">
+                <div class="container">
+                    <h2 id="comment__title">Laissez un commentaire</h2>
+                    <p>
+                        Veuillez laisser un commentaire pour toute collaboration
+                        ou juste un bonjour amical!
+                    </p>
+                    <form
+                        id="contact-form"
+                        action="https://formspree.io/f/xxxxxx"
+                        method="POST"
+                    >
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required />
+
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="_replyto"
+                            required
+                        />
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                        ></textarea>
+
+                        <!-- https://docs.astro.build/en/recipes/i18n/ -->
+                        <!-- <input type="hidden" name="_redirect" value="google.com"> -->
+                         
+                        <!-- <input type="hidden" name="_next" value="https://www.google.com"> -->
+                        <input type="hidden" name="_next" value="/about.astro/" />
+                        
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </section>
+            <ContactCTA />
+        </main>
+        <style>
+            .contact-page {
+                /* font-family: Arial, sans-serif; */ 
+                /*background-color: #f4f4f4;*/
+                margin: 10px;
+                padding: 10px;
+            }
+            .container {
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+
+            #comment__title {
+                font-size: 2rem;
+            }
+
+            h2 {
+                color: #333;
+            }
+
+            p {
+                text-align: center;
+                color: #666;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-top: 10px;
+                color: #333;
+            }
+
+            input,
+            textarea {
+                margin-top: 5px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+
+            button {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #6547ec;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            button:hover {
+                background-color: yellow;
+                color: black;
+                font-weight: 700;
+            }
+
+            @media screen and (max-width: 600px) {
+            #comment__title {
+                text-align: center;
+                font-size: medium;
+            }
+        </style>
+    </div>
+</BaseLayout>

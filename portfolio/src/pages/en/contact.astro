@@ -1,9 +1,14 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-import Hero from "../components/Hero.astro";
-import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../../components/Hero.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
 ---
+
+<!-- import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang); -->
 
 <BaseLayout
     title="Contact "
@@ -17,10 +22,9 @@ import ContactCTA from "../components/ContactCTA.astro";
         > -->
         <section class="contact-page font-sans bg-gray-200 m-2.5 p-2.5" style="background-color: var(--contact-bg-color)">
                 <div class="container">
-                    <h2 id="comment__title">Laissez un commentaire</h2>
+                    <h2 id="comment__title">Let a comment</h2>
                     <p>
-                        Veuillez laisser un commentaire pour toute collaboration
-                        ou juste un bonjour amical!
+                        Please leave a comment for any collaboration or just a friendly hello!
                     </p>
                     <form
                         id="contact-form"

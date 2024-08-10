@@ -2,32 +2,32 @@
 import { getCollection } from 'astro:content';
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro'; // Make sure the file exists in the specified location and the path is correct.
 
 // Component Imports
-import CallToAction from '../components/CallToAction.astro';
-import Grid from '../components/Grid.astro';
-import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import Grid from '../../components/Grid.astro';
+import Hero from '../../components/Hero.astro';
+import Icon from '../../components/Icon.astro';
 
 // Page section components
-import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import Skills from '../../components/Skills.astro';
 
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<meta http-equiv="refresh" content="0;url=/en/" />
+<!-- <meta http-equiv="refresh" content="0;url=/en/" /> -->
 
 <BaseLayout>
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Je m'appelle Ousmane Diallo."
-					tagline="Je suis un jeune junior développeur."
+					title="My name is Ousmane Diallo."
+					tagline="I'm a young junior developer."
 					align="start"
 				>
 				</Hero>
@@ -39,7 +39,7 @@ import Skills from '../components/Skills.astro';
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h5>Voir l'ensemble de mes projets personnels.</h5>
+					<h5>See all of my personal projects.</h5>
 				</header>
 
 				<div class="gallery">
