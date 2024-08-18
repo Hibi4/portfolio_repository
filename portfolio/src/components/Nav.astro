@@ -11,14 +11,22 @@ const t = useTranslations(lang);
 /* <a href={`/${lang}/home/`}>
     {t('nav.home')}
 </a> */
+/* 'nav.home': 'Home', 
+en: {
+      'nav.home': 'Home',
+      'nav.projects': 'Projects',
+      'nav.about': 'About',
+      'nav.education': 'Education',
+      'nav.contact': 'Contact',
+    },*/
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Projet', href: `/${lang}/work/` },
-	{ label: 'About', href: `/${lang}/about/` },
-	{label : 'Education', href: `/${lang}/education/`},
-	{label : 'Contact', href: `/${lang}/contact/`}
+	{ label: t(`nav.home`), href: '/' },
+	{ label: t(`nav.projects`), href: `/${lang}/work/` },
+	{ label: t(`nav.about`), href: `/${lang}/about/` },
+	{label : t(`nav.education`), href: `/${lang}/education/`},
+	{label : t(`nav.contact`), href: `/${lang}/contact/`}
 	/* {label : 'Contact', href: '/contact/'} {label : 'Contact', href: `/${lang}/contact/`} */
 ];
 
