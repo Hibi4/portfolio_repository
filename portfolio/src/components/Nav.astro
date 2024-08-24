@@ -16,7 +16,6 @@ const textLinks: { label: string; href: string }[] = [
 	{ label: t(`nav.about`), href: `/${lang}/about/` },
 	{ label: t(`nav.education`), href: `/${lang}/education/` },
 	{ label: t(`nav.contact`), href: `/${lang}/contact/` },
-	/* {label : 'Contact', href: '/contact/'} {label : 'Contact', href: `/${lang}/contact/`} */
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -27,10 +26,6 @@ const iconLinks: {
 }[] = [
 	{ label: "Twitter", href: "https://twitter.com/me", icon: "twitter-logo" },
 	{ label: "Linkedin", href: "www.linkedin.com/in/ousmane-diallo-a5308b230", icon: "linkedin-logo" },
-	/*{ label: 'GitHub', href: 'https://github.com/me', icon: 'github-logo' },
-	{ label: 'CodePen', href: 'https://codepen.io/me', icon: 'codepen-logo' },
-	{ label: 'dribbble', href: 'https://dribbble.com/me', icon: 'dribbble-logo' },
-	{ label: 'YouTube', href: 'https://www.youtube.com/@me/', icon: 'youtube-logo' }, */
 ];
 ---
 
@@ -131,8 +126,6 @@ const iconLinks: {
 						</a>
 					))
 				}
-				<!-- <span> <a href="google.com">English </a> </span>
-					<span> <a href="google.com">  Français</a> </span> -->
 			</div>
 
 			<div class="theme-toggle">
@@ -144,7 +137,6 @@ const iconLinks: {
 						<button type="button" class="btn btn-light" key={lang}>
 							<a href={`/${lang}/`}>{label}</a>
 						</button>
-						/* <span> <a href={`/${lang}/`} >{label}</a></span> */
 					))
 				}
 			</div>

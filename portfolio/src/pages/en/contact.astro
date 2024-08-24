@@ -5,30 +5,23 @@ import Hero from "../../components/Hero.astro";
 import ContactCTA from '../../components/en/ContactCTA.astro';
 ---
 
-<!-- import { getLangFromUrl, useTranslations } from '../i18n/utils';
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang); -->
-
 <BaseLayout
     title="Contact "
     description="The page to allow users, visitors to contact me."
 >
     <div class="contact">
         <main class="wrapper contact">
-            <!--<section
-                class="contact-page font-sans bg-gray-200 m-2.5 p-2.5"
-                style="background-color: var(--contact-bg-color)"
-        > -->
+            
         <section class="contact-page font-sans bg-gray-200 m-2.5 p-2.5" style="background-color: var(--contact-bg-color)">
                 <div class="container">
                     <h2 id="comment__title">Let a comment</h2>
                     <p>
                         Please leave a comment for any collaboration or just a friendly hello!
                     </p>
+                    <!-- action={`https://formspree.io/f/${import.meta.env.PUBLIC_FORMSPREE_KEY}`} -->
                     <form
                         id="contact-form"
-                        action="https://formspree.io/f/xxxxxx"
+                        action={`https://formspree.io/f/${import.meta.env.PUBLIC_FORMSPREE_KEY}`}
                         method="POST"
                     >
                         <label for="name">Name</label>
@@ -43,13 +36,8 @@ const t = useTranslations(lang); -->
                         />
 
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required
-                        ></textarea>
+                        <textarea id="message" name="message" rows="5" required ></textarea>
 
-                        <!-- https://docs.astro.build/en/recipes/i18n/ -->
-                        <!-- <input type="hidden" name="_redirect" value="google.com"> -->
-                         
-                        <!-- <input type="hidden" name="_next" value="https://www.google.com"> -->
                         <input type="hidden" name="_next" value="/about.astro/" />
                         
                         <button type="submit">Send</button>
@@ -60,8 +48,6 @@ const t = useTranslations(lang); -->
         </main>
         <style>
             .contact-page {
-                /* font-family: Arial, sans-serif; */ 
-                /*background-color: #f4f4f4;*/
                 margin: 10px;
                 padding: 10px;
             }
