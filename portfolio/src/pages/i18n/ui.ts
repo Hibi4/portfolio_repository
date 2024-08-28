@@ -12,6 +12,8 @@ export const ui = {
       'nav.about': 'About',
       'nav.education': 'Education',
       'nav.contact': 'Contact',
+      'english': 'English',
+      'french': 'French',
     },
     fr: {
       'nav.home': 'Accueil',
@@ -19,6 +21,8 @@ export const ui = {
       'nav.about': 'À propos',
       'nav.education': 'Éducation',
       'nav.contact': 'Contact',
+      'english': 'Anglais',
+      'french': 'Français',
     },
 } as const;
 /* export const languages = {

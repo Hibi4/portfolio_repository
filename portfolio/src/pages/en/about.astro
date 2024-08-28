@@ -21,7 +21,7 @@ import Hero from "../../components/Hero.astro";
 			<section>
 				<h2 class="section-title">Skills</h2>
 				<div class="content">
-					<p>I will detail my non-technical skills:</p>
+					<p> <u>My non-technical skills:</u></p>
 					<ul>
 						<li>Communication</li>
 						<li>Organisation</li>
@@ -76,6 +76,28 @@ import Hero from "../../components/Hero.astro";
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
 	}
+
+	ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+		background-color: #e0e0e0;
+        box-shadow: 0 2px 5px rgba(108, 99, 99, 0.1);
+        opacity: 1;
+		width: 20%;
+        transform: translateY(20px);
+        transition: opacity 0.5s, transform 0.5s, background-color 0.3s;
+    }
+    
+    li.visible {
+        opacity: 1;
+        transform: translateY(0);
+    } 
 
 	@media (min-width: 50em) {
 		.about {
