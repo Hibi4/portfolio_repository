@@ -134,9 +134,9 @@ const iconLinks: {
 			<div class="btns__languages__div" style="font-size: small;">
 				{
 					Object.entries(languages).map(([lang, label]) => (
-						<button type="button" class="btn btn-light" key={lang}>
-							<a href={`/${lang}/`}> { label } </a>
-						</button>
+						<a href={`/${lang}/`} class="btn btn-light">
+							{label}
+						</a>
 					))
 				}
 				<!--
