@@ -235,6 +235,10 @@ h5 {
 	gap: 12rem;
 }
 
+.btn__lang {
+	margin: 5px;
+}
+
 @media (min-width: 50em) {
 	.lg\:gap-2 {
 		gap: 0.5rem;

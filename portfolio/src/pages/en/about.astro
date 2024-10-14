@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 import ContactCTA from '../../components/en/ContactCTA.astro';
 import Hero from "../../components/Hero.astro";
+import '../../styles/skills.css'
 ---
 
 <BaseLayout title="About | Ousmane Diallo" description="About Ousmane Diallo">
@@ -21,19 +22,144 @@ import Hero from "../../components/Hero.astro";
 			<section>
 				<h2 class="section-title">Skills</h2>
 				<div class="content">
-					<p> <u>My non-technical skills:</u></p>
+					<p> My non-technical skills <p>
+					<div class="skills-section">
+						<div class="container">
+							<div class="skills-grid" id="skillsGrid">
+								
+								<!-- skills will be dynamically inserted here -->
+							</div>
+						</div>
+					</div>
+					<!-- <p> <u>My non-technical skills:</u></p>
 					<ul>
 						<li>Communication</li>
 						<li>Organisation</li>
 						<li>Leadership</li>
 						<li>Creativity</li>
-					</ul>
+					</ul> -->
 				</div>
 			</section>
 		</main>
 
 		<ContactCTA />
 	</div>
+
+	<script>
+		const nonTechnicalSkills = [
+    { 
+        name: "Project Management", 
+        icon: "trending-up",
+        description: "Our seasoned project managers ensure timely delivery and optimal resource allocation, keeping your projects on track and within budget.",
+        keyPoints: ["Agile methodologies", "Risk management", "Stakeholder communication"]
+    },
+    { 
+        name: "Team Collaboration", 
+        icon: "users",
+        description: "We foster a culture of collaboration, leveraging diverse skills and perspectives to drive innovation and achieve outstanding results.",
+        keyPoints: ["Cross-functional teamwork", "Knowledge sharing", "Collaborative tools expertise"]
+    },
+    { 
+        name: "Problem Solving", 
+        icon: "lightbulb",
+        description: "Our team excels in tackling complex challenges, employing creative thinking and data-driven approaches to find effective solutions.",
+        keyPoints: ["Analytical thinking", "Innovation mindset", "Continuous improvement"]
+    },
+    { 
+        name: "Communication", 
+        icon: "message-circle",
+        description: "Clear and effective communication is at the heart of our success, ensuring alignment with clients and seamless project execution.",
+        keyPoints: ["Client relationship management", "Technical writing", "Presentation skills"]
+    },
+    { 
+        name: "Strategic Planning", 
+        icon: "target",
+        description: "We help businesses define and achieve their long-term goals through comprehensive strategic planning and execution.",
+        keyPoints: ["Market analysis", "Goal setting", "Performance tracking"]
+    },
+];
+
+function createSkillCard(skill) {
+    const card = document.createElement('div');
+    card.className = 'skill-card';
+
+    const header = document.createElement('div');
+    header.className = 'skill-header';
+
+    const icon = document.createElement('span');
+    icon.className = 'skill-icon';
+    icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#${skill.icon}"></use></svg>`;
+
+    const name = document.createElement('h3');
+    name.className = 'skill-name';
+    name.textContent = skill.name;
+
+    header.appendChild(icon);
+    header.appendChild(name);
+
+    const description = document.createElement('p');
+    description.className = 'skill-description';
+    description.textContent = skill.description;
+
+    const points = document.createElement('ul');
+    points.className = 'skill-points';
+
+    skill.keyPoints.forEach(point => {
+        const li = document.createElement('li');
+        const span = document.createElement('span');
+        span.textContent = point;
+        li.appendChild(span);
+        points.appendChild(li);
+    });
+
+    card.appendChild(header);
+    card.appendChild(description);
+    card.appendChild(points);
+
+    return card;
+}
+
+function renderSkills() {
+    const skillsGrid = document.getElementById('skillsGrid');
+    nonTechnicalSkills.forEach(skill => {
+        const card = createSkillCard(skill);
+        skillsGrid.appendChild(card);
+    });
+}
+
+// SVG sprite for icons
+const svgSprite = `
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+        <polyline points="17 6 23 6 23 12"></polyline>
+    </symbol>
+    <symbol id="users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+    </symbol>
+    <symbol id="lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="9" y1="18" x2="15" y2="18"></line>
+        <line x1="10" y1="22" x2="14" y2="22"></line>
+        <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+    </symbol>
+    <symbol id="message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </symbol>
+    <symbol id="target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <circle cx="12" cy="12" r="6"></circle>
+        <circle cx="12" cy="12" r="2"></circle>
+    </symbol>
+</svg>
+`;
+
+document.body.insertAdjacentHTML('afterbegin', svgSprite);
+
+document.addEventListener('DOMContentLoaded', renderSkills);
+	</script>
 </BaseLayout>
 
 <style>
