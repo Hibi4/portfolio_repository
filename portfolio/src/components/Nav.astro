@@ -139,12 +139,6 @@ const iconLinks: {
 						</a>
 					))
 				}
-				<!--
-				curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-				source ~/.nvm/nvm.sh
-				nvm install 18.14.1
-				go the files project and npm run dev 
-				 -->
 			</div>
 		</div>
 	</div>
@@ -412,6 +406,28 @@ const iconLinks: {
 	@media (forced-colors: active) {
 		.link.active {
 			color: SelectedItem;
+		}
+	}
+
+	/* @media (min-width: 37.5em) and (max-width: 48em) { */ 
+	@media (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
+		.menu-footer {
+			display: -webkit-box;
+			padding: 0;
+			/* background-color: transparent; */ 
+			box-shadow: none;
+		}
+	}
+
+	@media (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
+		.menu-footer {
+			display: -webkit-box;
+		}
+	}
+
+	@media (min-width: 790px) and (max-width: 1450px) and (orientation: landscape) {
+		.menu-footer {
+			display: -webkit-box;
 		}
 	}
 </style>
