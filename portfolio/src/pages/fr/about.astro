@@ -54,38 +54,38 @@ import '../../styles/skills.css'
 	<script>
 	const nonTechnicalSkills = [
     { 
-        name: "Project Management", 
+        name: "Gestion de Projet", 
         icon: "trending-up",
-        description: "Our seasoned project managers ensure timely delivery and optimal resource allocation, keeping your projects on track and within budget.",
-        keyPoints: ["Agile methodologies", "Risk management", "Stakeholder communication"]
+        description: "Nos chefs de projet expérimentés assurent une livraison dans les délais et une allocation optimale des ressources, maintenant vos projets sur la bonne voie et dans les limites du budget.",
+        keyPoints: ["Méthodologies Agile", "Gestion des risques", "Communication avec les parties prenantes"]
     },
     { 
-        name: "Team Collaboration", 
+        name: "Collaboration d'Équipe", 
         icon: "users",
-        description: "We foster a culture of collaboration, leveraging diverse skills and perspectives to drive innovation and achieve outstanding results.",
-        keyPoints: ["Cross-functional teamwork", "Knowledge sharing", "Collaborative tools expertise"]
+        description: "Nous favorisons une culture de collaboration, tirant parti de compétences et de perspectives diverses pour stimuler l'innovation et obtenir des résultats exceptionnels.",
+        keyPoints: ["Travail d'équipe interfonctionnel", "Partage des connaissances", "Expertise en outils collaboratifs"]
     },
     { 
-        name: "Problem Solving", 
+        name: "Résolution de Problèmes", 
         icon: "lightbulb",
-        description: "Our team excels in tackling complex challenges, employing creative thinking and data-driven approaches to find effective solutions.",
-        keyPoints: ["Analytical thinking", "Innovation mindset", "Continuous improvement"]
+        description: "Notre équipe excelle dans la résolution de défis complexes, en employant une réflexion créative et des approches basées sur les données pour trouver des solutions efficaces.",
+        keyPoints: ["Pensée analytique", "Esprit d'innovation", "Amélioration continue"]
     },
     { 
         name: "Communication", 
         icon: "message-circle",
-        description: "Clear and effective communication is at the heart of our success, ensuring alignment with clients and seamless project execution.",
-        keyPoints: ["Client relationship management", "Technical writing", "Presentation skills"]
+        description: "Une communication claire et efficace est au cœur de notre succès, assurant l'alignement avec les clients et une exécution fluide des projets.",
+        keyPoints: ["Gestion des relations clients", "Rédaction technique", "Compétences en présentation"]
     },
     { 
-        name: "Strategic Planning", 
+        name: "Planification Stratégique", 
         icon: "target",
-        description: "We help businesses define and achieve their long-term goals through comprehensive strategic planning and execution.",
-        keyPoints: ["Market analysis", "Goal setting", "Performance tracking"]
+        description: "Nous aidons les entreprises à définir et atteindre leurs objectifs à long terme grâce à une planification et une exécution stratégiques complètes.",
+        keyPoints: ["Analyse de marché", "Définition d'objectifs", "Suivi des performances"]
     },
 ];
 
-function createSkillCard(skill) {
+function createSkillCard(skill : any) {
     const card = document.createElement('div');
     card.className = 'skill-card';
 
@@ -96,12 +96,12 @@ function createSkillCard(skill) {
     icon.className = 'skill-icon';
     icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#${skill.icon}"></use></svg>`;
 
-    const name = document.createElement('h3');
-    name.className = 'skill-name';
-    name.textContent = skill.name;
+    const nom = document.createElement('h3');
+    nom.className = 'skill-name';
+    nom.textContent = skill.name;
 
     header.appendChild(icon);
-    header.appendChild(name);
+    header.appendChild(nom);
 
     const description = document.createElement('p');
     description.className = 'skill-description';
@@ -110,7 +110,7 @@ function createSkillCard(skill) {
     const points = document.createElement('ul');
     points.className = 'skill-points';
 
-    skill.keyPoints.forEach(point => {
+    skill.keyPoints.forEach((point: string) => {
         const li = document.createElement('li');
         const span = document.createElement('span');
         span.textContent = point;
@@ -127,10 +127,12 @@ function createSkillCard(skill) {
 
 function renderSkills() {
     const skillsGrid = document.getElementById('skillsGrid');
-    nonTechnicalSkills.forEach(skill => {
-        const card = createSkillCard(skill);
-        skillsGrid.appendChild(card);
-    });
+    if (skillsGrid) {
+        nonTechnicalSkills.forEach(skill => {
+            const card = createSkillCard(skill);
+            skillsGrid.appendChild(card);
+        });
+    }
 }
 
 // SVG sprite for icons
@@ -165,7 +167,7 @@ const svgSprite = `
 document.body.insertAdjacentHTML('afterbegin', svgSprite);
 
 document.addEventListener('DOMContentLoaded', renderSkills);
-</script>
+	</script>
 </BaseLayout>
 
 <style>

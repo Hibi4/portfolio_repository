@@ -409,11 +409,16 @@ const iconLinks: {
 		}
 	}
 
+	@media (min-width: 400px) and (orientation: portrait) { 
+		.menu-footer {
+			display: -webkit-box;
+		}
+	}
+
 	@media (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
 		.menu-footer {
 			display: -webkit-box;
 			padding: 0;
-			/* background-color: transparent; */ 
 			box-shadow: none;
 		}
 	}

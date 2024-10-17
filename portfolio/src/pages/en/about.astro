@@ -79,7 +79,7 @@ import '../../styles/skills.css'
     },
 ];
 
-function createSkillCard(skill : string) {
+function createSkillCard(skill : any) {
     const card = document.createElement('div');
     card.className = 'skill-card';
 
@@ -90,12 +90,12 @@ function createSkillCard(skill : string) {
     icon.className = 'skill-icon';
     icon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#${skill.icon}"></use></svg>`;
 
-    const name = document.createElement('h3');
-    name.className = 'skill-name';
-    name.textContent = skill.name;
+    const nom = document.createElement('h3');
+    nom.className = 'skill-name';
+    nom.textContent = skill.name;
 
     header.appendChild(icon);
-    header.appendChild(name);
+    header.appendChild(nom);
 
     const description = document.createElement('p');
     description.className = 'skill-description';
@@ -104,7 +104,7 @@ function createSkillCard(skill : string) {
     const points = document.createElement('ul');
     points.className = 'skill-points';
 
-    skill.keyPoints.forEach(point => {
+    skill.keyPoints.forEach((point: string) => {
         const li = document.createElement('li');
         const span = document.createElement('span');
         span.textContent = point;
@@ -121,10 +121,12 @@ function createSkillCard(skill : string) {
 
 function renderSkills() {
     const skillsGrid = document.getElementById('skillsGrid');
-    nonTechnicalSkills.forEach(skill => {
-        const card = createSkillCard(skill);
-        skillsGrid.appendChild(card);
-    });
+    if (skillsGrid) {
+        nonTechnicalSkills.forEach(skill => {
+            const card = createSkillCard(skill);
+            skillsGrid.appendChild(card);
+        });
+    }
 }
 
 // SVG sprite for icons
