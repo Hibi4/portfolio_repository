@@ -1,0 +1,87 @@
+---
+import type { Project, ProjectLang } from '../data/projects';
+
+interface Props {
+	project: Project;
+	lang: ProjectLang;
+}
+
+const { project, lang } = Astro.props;
+---
+
+<article class="project-card">
+	<h2 class="project-title">{project.title[lang]}</h2>
+	<p class="project-description" set:html={project.description[lang]} />
+	<div class="project-tags">
+		{project.tags.map((tag) => (
+			<span class="tag">{tag}</span>
+		))}
+	</div>
+	<a
+		href={project.repo.url}
+		class="repo-link"
+		target="_blank"
+		rel="noopener noreferrer"
+	>
+		{project.repo.label[lang]}
+	</a>
+</article>
+
+<style>
+	.project-card {
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.project-title {
+		font-size: 1.5em;
+		margin-bottom: 10px;
+	}
+
+	.project-description {
+		margin-bottom: 15px;
+		flex-grow: 1;
+	}
+
+	.project-description :global(a) {
+		color: var(--link-color);
+	}
+
+	.project-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin-bottom: 15px;
+	}
+
+	.tag {
+		background-color: #f0f0f0;
+		padding: 5px 10px;
+		border-radius: 20px;
+		font-size: medium;
+		color: var(--tag-color);
+	}
+
+	.repo-link {
+		display: inline-block;
+		background-color: #24292e;
+		color: white;
+		padding: 10px 15px;
+		text-decoration: none;
+		border-radius: 5px;
+		transition: background-color 0.3s;
+	}
+
+	.repo-link:hover {
+		background-color: #555;
+	}
+
+	.tag:hover {
+		background-color: blueviolet;
+		color: white;
+		cursor: pointer;
+	}
+</style>

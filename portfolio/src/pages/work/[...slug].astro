@@ -7,10 +7,13 @@ import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
+import { getLangFromUrl } from '../../pages/i18n/utils';
 
 interface Props {
 	entry: CollectionEntry<'work'>;
 }
+
+const lang = getLangFromUrl(Astro.url);
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 // Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
@@ -52,7 +55,7 @@ const { Content } = await entry.render();
 				</div>
 			</main>
 		</div>
-		<ContactCTA />
+		<ContactCTA lang={lang} />
 	</div>
 </BaseLayout>
 

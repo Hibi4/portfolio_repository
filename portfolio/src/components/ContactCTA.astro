@@ -1,12 +1,33 @@
 ---
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
+import type { ProjectLang } from '../data/projects';
+
+interface Props {
+	lang?: ProjectLang;
+}
+
+const { lang = 'fr' } = Astro.props;
+
+const content = {
+	fr: {
+		heading: 'Intéressé par une collaboration ?',
+		button: 'Envoyez-moi un message',
+	},
+	en: {
+		heading: 'Interested in a collaboration?',
+		button: 'Send me a message',
+	},
+} as const;
+
+const t = content[lang];
+const email = 'mailto:albertroy1947@gmail.com';
 ---
 
 <aside>
-	<h2>Intéressez pour une collaboration ? </h2>
-	<CallToAction href="mailto:me@example.com">
-		Envoyez-moi un message
+	<h2>{t.heading}</h2>
+	<CallToAction href={email}>
+		{t.button}
 		<Icon icon="paper-plane-tilt" size="1.2em" />
 	</CallToAction>
 </aside>

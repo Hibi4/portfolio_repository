@@ -1,0 +1,28 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { getProjects, type ProjectLang } from '../data/projects';
+
+interface Props {
+	lang: ProjectLang;
+	featuredOnly?: boolean;
+}
+
+const { lang, featuredOnly = false } = Astro.props;
+const visibleProjects = getProjects({ featuredOnly });
+---
+
+<section>
+	<div class="project-grid">
+		{visibleProjects.map((project) => (
+			<ProjectCard project={project} lang={lang} />
+		))}
+	</div>
+</section>
+
+<style>
+	.project-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 20px;
+	}
+</style>
