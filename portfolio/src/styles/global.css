@@ -26,6 +26,7 @@
 	--accent-overlay: hsla(280, 89%, 67%, 0.33);
 	--accent-subtle-overlay: var(--accent-overlay);
 	--accent-text-over: var(--gray-999);
+	--repo-bg-color: #555;
 
 	--link-color: var(--accent-regular);
 
@@ -81,6 +82,7 @@
 	--contact-bg-color: inherit;
 	--heading-color: var(--gray-100);
 	--tag-color: var(--gray-999);
+	--repo-color: var(--repo-bg-color);
 
 	--gray-0: #ffffff;
 	--gray-50: #f3f4f7;
