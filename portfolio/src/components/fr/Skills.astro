@@ -1,69 +1,160 @@
 ---
 import Icon from '.././Icon.astro';
+import '../../styles/skills.css';
 ---
 
 <div><h1>Langages de programmation</h1></div>
 <section class="box skills">
-	<!-- <div class="stack gap-2 lg:gap-4">
+	<h2>Compétences</h2>
+
+	<div class="skills-categories">
+		<!-- Frontend -->
+		<div class="category">
+			<h3>Frontend</h3>
+			<div class="skills-grid">
+				<article class="skill-card">
+					<img class="skill-icon" src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5"/>
+					<div class="skill-body">
+						<h4 class="skill-name">HTML5 <span class="skill-level">Expert</span></h4>
+						<p class="skill-desc">Structure sémantique et accessibilité</p>
+					</div>
+				</article>
+
+				<article class="skill-card">
+					<img class="skill-icon" src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3"/>
+					<div class="skill-body">
+						<h4 class="skill-name">CSS3 <span class="skill-level">Confirmé</span></h4>
+						<p class="skill-desc">Responsive, animations, layout modernes</p>
+					</div>
+				</article>
+
+				<article class="skill-card">
+					<img class="skill-icon" src="https://img.icons8.com/color/48/000000/javascript.png" alt="Javascript"/>
+					<div class="skill-body">
+						<h4 class="skill-name">JavaScript <span class="skill-level">Confirmé</span></h4>
+						<p class="skill-desc">DOM, ES6+, fetch, petites interactions</p>
+					</div>
+				</article>
+			</div>
+		</div>
+
+		<!-- Backend -->
+		<div class="category">
+			<h3>Backend</h3>
+			<div class="skills-grid">
+				<article class="skill-card">
+					<img class="skill-icon" src="https://img.icons8.com/color/48/000000/php.png" alt="PHP"/>
+					<div class="skill-body">
+						<h4 class="skill-name">PHP <span class="skill-level">Intermédiaire</span></h4>
+						<p class="skill-desc">APIs, templating, gestion serveur</p>
+					</div>
+				</article>
+
+				<article class="skill-card">
+					<img class="skill-icon" src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MySQL"/>
+					<div class="skill-body">
+						<h4 class="skill-name">MySQL <span class="skill-level">Intermédiaire</span></h4>
+						<p class="skill-desc">Modélisation et requêtes</p>
+					</div>
+				</article>
+
+				<article class="skill-card">
+					<img class="skill-icon" src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" alt="Java"/>
+					<div class="skill-body">
+						<h4 class="skill-name">Java <span class="skill-level">Débutant</span></h4>
+						<p class="skill-desc">Bases orientées objet et framework</p>
+					</div>
+				</article>
+			</div>
+		</div>
+
+		<!-- Outils -->
+		<div class="category">
+			<h3>Outils & DevOps</h3>
+			<div class="skills-grid">
+				<article class="skill-card">
+					<img class="skill-icon" src="https://img.icons8.com/color/48/000000/git.png" alt="Git"/>
+					<div class="skill-body">
+						<h4 class="skill-name">Git <span class="skill-level">Confirmé</span></h4>
+						<p class="skill-desc">Versioning, branches, workflow</p>
+					</div>
+				</article>
+
+				<article class="skill-card">
+					<img class="skill-icon" src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap"/>
+					<div class="skill-body">
+						<h4 class="skill-name">Bootstrap <span class="skill-level">Intermédiaire</span></h4>
+						<p class="skill-desc">Composants et utilitaires rapides</p>
+					</div>
+				</article>
+
+				<article class="skill-card">
+					<img class="skill-icon" src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL"/>
+					<div class="skill-body">
+						<h4 class="skill-name">SQL <span class="skill-level">Intermédiaire</span></h4>
+						<p class="skill-desc">Requêtes, jointures et optimisation</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+
+<!-- <div class="stack gap-2 lg:gap-4">
 		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
-	</div> -->
+	</div> 
 	<div>
-		<!-- <Icon icon="git-logo" color="var(--accent-regular)" size="2.5rem" gradient /> -->
-		 <!-- The GIT icon -->
+		
+		 
 		 <img src="https://img.icons8.com/color/48/000000/git.png" alt="GIT" title="GIT"/>
 	</div>
 	<div>
-		<!-- <Icon icon="html-logo" color="var(--accent-regular)" size="2.5rem" gradient /> -->
-		 <!-- The HTML icon -->
+		
 		<img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5" title="HTML5"/>
 	</div>
 	<div>
-		<!-- <Icon icon="javascript-logo" color="var(--accent-regular)" size="2.5rem" gradient /> -->
-		 <!-- The JAVASCRIPT icon -->
+		
 		<img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JAVASCRIPT" title="Javascript"/>
 	</div>
 	<div>
-		<!-- <Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient /> -->
-		 <!-- The JAVA icon -->
+		
 		<img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" alt="JAVA" title="JAVA"/>
 	</div>
 	<div>
-		<!-- <Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient /> -->
-		 <!-- The CSS3 icon -->
+		
 		<img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3" title="CSS3"/>
 	</div>
 	<div>
-		<!-- The JQUERY icon -->
+		
 		<img src="https://img.icons8.com/ios-filled/50/000000/jquery.png" alt="jQuery Icon" title="JQUERY"/>
 	</div>
 	<div>
-		<!-- The PHP icon -->
+		
 		<img src="https://img.icons8.com/color/48/000000/php.png" alt="PHP Icon" title="PHP"/>
 	</div>
 	<div>
-		<!-- The MYSQL icon -->
+		
 		<img src="https://img.icons8.com/color/48/000000/mysql-logo.png" alt="MYSQL Icon" title="MYSQL"/>
 	</div>
 	<div>
-		<!-- The KOTLIN icon -->
+		
 		<img src="https://img.icons8.com/fluency/48/laravel.png" alt="Laravel Icon" title="Laravel"/>
 	</div>
 	<div>
-		<!-- The SQL icon -->
+		
 		<img src="https://img.icons8.com/color/48/sql.png" alt="SQL Icon" title="SQL"/>
 	</div>
 	<div>
-		<!-- The KOTLIN icon -->
+		
 		<img src="https://img.icons8.com/color/48/kotlin.png" alt="Kotlin Icon" title="Kotlin"/>
 	</div>
 	<div>
-		<!-- The SPRING icon -->
+		
 		<img src="https://img.icons8.com/color/48/spring-logo.png" alt="Spring Icon" title="Spring"/>
 	</div>
 	<div>
-		<!-- The BOOTSTRAP icon -->
+		
 		<img src="https://img.icons8.com/color/48/bootstrap.png" alt="Bootstrap Icon" title="Bootstrap"/>
-	</div>
+	</div> -->
 </section>
 
 <!-- <section class="box skills">
