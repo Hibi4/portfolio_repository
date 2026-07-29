@@ -6,6 +6,9 @@
 
 }
 
+.category-title {
+    text-align: center;
+}
 .skills-section {
     padding: 4rem 0;
 }
@@ -108,7 +111,6 @@ h2 {
     }
 }
 
-/* New styles for categorized cards layout */
 .skills-section {
     padding: 2.5rem 0;
 }
@@ -141,7 +143,7 @@ h2 {
     height : 180px;
     padding: 1rem;
     border-radius: 12px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,250,0.95));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgb(249 244 244 / 95%));
     transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
@@ -167,6 +169,7 @@ h2 {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    color: var(--text-color);
 }
 
 .skill-level {
