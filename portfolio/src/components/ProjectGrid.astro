@@ -11,7 +11,11 @@ const { lang, featuredOnly = false } = Astro.props;
 const visibleProjects = getProjects({ featuredOnly });
 ---
 
-<section>
+<section class="project-grid-section">
+	<div class="project-grid-intro">
+		<p>Une sélection de projets personnels, construits avec des technologies réelles et des déploiements concrets.</p>
+	</div>
+
 	<div class="project-grid">
 		{visibleProjects.map((project) => (
 			<ProjectCard project={project} lang={lang} />
@@ -20,9 +24,21 @@ const visibleProjects = getProjects({ featuredOnly });
 </section>
 
 <style>
+	.project-grid-section {
+		display: grid;
+		gap: 1.5rem;
+	}
+
+	.project-grid-intro p {
+		max-width: 44rem;
+		color: var(--gray-400);
+		font-size: 1rem;
+		line-height: 1.8;
+	}
+
 	.project-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 20px;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: 24px;
 	}
 </style>

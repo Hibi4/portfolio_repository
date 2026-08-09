@@ -140,7 +140,7 @@ h2 {
     display: flex;
     align-items: center;
     gap: 0.9rem;
-    height : 180px;
+    /* height : 180px; */ 
     padding: 1rem;
     border-radius: 12px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgb(249 244 244 / 95%));
