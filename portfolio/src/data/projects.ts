@@ -26,7 +26,7 @@ export const projects: Project[] = [
 		},
 		tags: ['HTML', 'CSS', 'JS', 'React'],
 		repo: {
-			url: 'https://github.com/Hibi4/FrontentMentor_project',
+			url: 'https://github.com/Hibi4/FrontendMentor_project',
 			label: {
 				fr: 'Voir sur GitHub',
 				en: 'View on GitHub',
