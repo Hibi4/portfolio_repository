@@ -1,32 +1,80 @@
-# Astro Starter Kit: Portfolio
+Notes
 
-```sh
-npm create astro@latest -- --template portfolio
+# Portfolio (Astro) — personal website
+
+A personal portfolio website built with **Astro** (based on the *Astro Starter Kit: Portfolio* template).
+Goal: showcase my projects, skills, and contact information through a static, responsive, and accessible website.
+
+🔗 **Live site:** https://portfolio-ousmane-diallo.vercel.app/en/
+
+---
+
+## 🛠️ Tech stack
+
+- **Languages:** Astro, TypeScript, CSS (PostCSS), HTML
+- **Framework:** Astro v4.x
+- **Notable dependencies:** `astro`, `typescript`, `@astrojs/check`
+- **Environment:** Node.js + npm (recommended: Node 18+)
+
+## ✨ Key features
+
+- Multi-language pages (FR / EN)
+- Project grid (`ProjectGrid` / `ProjectCard`)
+- Reusable components: header, footer, hero, CTA, theme toggle
+- Centralized SVG icons (`IconPaths.ts`) and theming (dark/light)
+- Progressive enhancement: navigation usable without JS, menu enhanced with JS
+- Static build ready to deploy
+
+## 🚀 Install & run (development)
+
+```bash
+# from the project root
+npm install
+npm run dev       # local server (default: localhost:4321)
+npm run build
+npm run preview
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/portfolio/devcontainer.json)
+## 🎨 Quick customization
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Screenshots:** place them in `portfolio/public/` and reference them in the pages/projects
 
-![portfolio](https://user-images.githubusercontent.com/357379/210779178-a98f0fb7-6b1a-4068-894c-8e1403e26654.jpg)
+## 🧩 Technical challenges and solutions
 
-## 🧞 Commands
+- **Accessible navigation + no-JS support:** full structure wrapped in `<noscript>`, with the menu enhanced via a Web Component for progressive enhancement.
+- **Icon reusability:** `IconPaths.ts` centralizes all SVGs for visual consistency and easier maintenance.
+- **Performant theming:** CSS variables + `ThemeToggle` to avoid flash-of-unstyled-content and keep transitions smooth.
+- **Internationalization (i18n):** separate components for FR/EN, with dedicated utilities to extract the language from the URL.
 
-All commands are run from the root of the project, from a terminal:
+## 💡 Skills demonstrated
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- Modern front-end development with Astro (components, responsive design, accessibility)
+- Modular, maintainable TypeScript
+- SVG asset management and optimization
+- Preparing and deploying a static site to production
 
-## 👀 Want to learn more?
+## 📦 Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Deployed on **Vercel**.
 
+- Build command: `npm run build`
+- Publish directory: `dist/`
+- Automatic deployment via Git integration
 
+## ✅ Production checklist
+
+- [ ]  Replace all placeholder content with real projects and screenshots
+- [ ]  Add a license (e.g., MIT)
+- [ ]  Add CI (GitHub Actions) for build/tests/preview
+
+## 📄 License
+
+This project is distributed under the MIT license.
+
+## 📬 Contact
+
+- **Name:** Ousmane Diallo
+- **Email:** you@example.com
+- **LinkedIn:** https://www.linkedin.com/in/ousmane-diallo-a5308b230
+- **GitHub:** https://github.com/Hibi4/
+- **Portfolio:** https://portfolio-ousmane-diallo.vercel.app/en/
