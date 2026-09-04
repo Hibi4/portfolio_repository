@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../../layouts/BaseLayout.astro'; // Make sure the file exists in the specified location and the path is correct.
@@ -92,7 +91,6 @@ const t = useTranslations(lang);
 		.hero {
 			display: grid;
 			grid-template-columns: 6fr 4fr;
-			/* padding-inline: 2.5rem; */ 
 			gap: 3.75rem;
 		}
 

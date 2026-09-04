@@ -36,7 +36,7 @@ import ContactCTA from '../../components/ContactCTA.astro';
                     method="POST"
                 >
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required />
+                    <input type="text" id="name" minlength="3" maxlength="30" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" name="name" required />
 
                     <label for="email">Email</label>
                     <input
