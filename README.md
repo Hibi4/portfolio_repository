@@ -74,7 +74,7 @@ This project is distributed under the MIT license.
 ## 📬 Contact
 
 - **Name:** Ousmane Diallo
-- **Email:** you@example.com
+- **Email:** albertroy1947@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/ousmane-diallo-a5308b230
 - **GitHub:** https://github.com/Hibi4/
 - **Portfolio:** https://portfolio-ousmane-diallo.vercel.app/en/
