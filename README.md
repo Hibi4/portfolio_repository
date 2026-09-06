@@ -2,6 +2,9 @@ Notes
 
 # Portfolio (Astro) — personal website
 
+
+![Design preview for the Portfolio](./public/desktop-preview.jpg)
+
 A personal portfolio website built with **Astro** (based on the *Astro Starter Kit: Portfolio* template).
 Goal: showcase my projects, skills, and contact information through a static, responsive, and accessible website.
 
@@ -60,12 +63,6 @@ Deployed on **Vercel**.
 - Build command: `npm run build`
 - Publish directory: `dist/`
 - Automatic deployment via Git integration
-
-## ✅ Production checklist
-
-- [ ]  Replace all placeholder content with real projects and screenshots
-- [ ]  Add a license (e.g., MIT)
-- [ ]  Add CI (GitHub Actions) for build/tests/preview
 
 ## 📄 License
 
