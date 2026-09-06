@@ -3,7 +3,7 @@ Notes
 # Portfolio (Astro) — personal website
 
 
-![Design preview for the Portfolio](./public/desktop-preview.jpg)
+![Design preview for the Portfolio](./portfolio/public/Portfolio_Screenshot.jpeg)
 
 A personal portfolio website built with **Astro** (based on the *Astro Starter Kit: Portfolio* template).
 Goal: showcase my projects, skills, and contact information through a static, responsive, and accessible website.
