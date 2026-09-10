@@ -77,7 +77,7 @@ h2 {
     --text-color: #1f2937;
     --muted-color: #6b7280;
 
-    --gray-0: #ffffff;
+    /* --gray-0: #ffffff;
 	--gray-50: #f3f4f7;
 	--gray-100: #e3e6ee;
 	--gray-200: #c3cadb;
@@ -89,7 +89,7 @@ h2 {
 	--gray-800: #283044;
 	--gray-900: #141925;
 	--gray-999-basis: 225, 31%, 5%;
-	--gray-999: #090b11;
+	--gray-999: #090b11; */ 
 
     .skill-points li span {
         color: var(--gray-900);
