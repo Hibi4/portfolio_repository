@@ -11,6 +11,12 @@ import Icon from '../../components/Icon.astro';
 
 // Page section components
 import ContactCTA from '../../components/ContactCTA.astro';
+import Skills from '../skills.astro'
+
+import { getLangFromUrl, useTranslations } from '../../pages/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 
 // Full Astro Component Syntax:
@@ -28,7 +34,7 @@ import ContactCTA from '../../components/ContactCTA.astro';
 				>
 				</Hero>
 			</header>
-
+			<Skills lang={lang} t={t} />
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">

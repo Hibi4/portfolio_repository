@@ -1,0 +1,113 @@
+--- 
+import '../styles/skills.css'
+
+
+interface Props {
+        lang: 'en' | 'fr';
+        t: (key: string) => any;
+}
+
+const { lang, t } = Astro.props;
+const skillData = [
+        {
+                category: 'frontend',
+                skills: [
+                        { icon: 'html-5.png', name: 'HTML5', level: 'expert', descKey: 'skills.html5.desc' },
+                        { icon: 'css3.png', name: 'CSS3', level: 'confirmed', descKey: 'skills.css3.desc' },
+                        { icon: 'javascript.png', name: 'JavaScript', level: 'confirmed', descKey: 'skills.javascript.desc' },
+                ],
+        },
+        {
+                category: 'backend',
+                skills: [
+                        { icon: 'php.png', name: 'PHP', level: 'intermediate', descKey: 'skills.php.desc' },
+                        { icon: 'mysql-logo.png', name: 'MySQL', level: 'intermediate', descKey: 'skills.mysql.desc' },
+                        { icon: 'java-coffee-cup-logo.png', name: 'Java', level: 'beginner', descKey: 'skills.java.desc' },
+                ],
+        },
+        {
+                category: 'tools',
+                skills: [
+                        { icon: 'git.png', name: 'Git', level: 'confirmed', descKey: 'skills.git.desc' },
+                        { icon: 'bootstrap.png', name: 'Bootstrap', level: 'intermediate', descKey: 'skills.bootstrap.desc' },
+                        { icon: 'sql.png', name: 'SQL', level: 'intermediate', descKey: 'skills.sql.desc' },
+                ],
+        },
+];
+---
+
+<div><h1>{t('skills.title')}</h1></div>
+
+<section class="box skills">
+        <h2>{t('skills.heading')}</h2>
+
+        <div class="skills-categories">
+                {skillData.map((category) => (
+                        <div class="category">
+                                <h3 class="category-title">{t(`skills.categories.${category.category}`)}</h3>
+                                <div class="skills-grid">
+                                        {category.skills.map((skill) => (
+                                                <article class="skill-card skill-home">
+                                                <img class="skill-icon" src={`https://img.icons8.com/color/48/000000/${skill.icon}`} alt={skill.name}/>
+                                                <div class="skill-body">
+                                                        <h4 class="skill-name">{skill.name} <span class="skill-level">{t(`skills.levels.${skill.level}`)}</span></h4>
+                                                        <p class="skill-desc">{t(skill.descKey)}</p>
+                                                </div>
+                                        </article>
+                                        ))}
+                                </div>
+                        </div>
+                ))}
+        </div>
+</section>
+
+<style>
+        .box {
+                border: 1px solid var(--gray-800);
+                border-radius: 0.75rem;
+                padding: 1.5rem;
+                background-color: var(--gray-999_40);
+                box-shadow: var(--shadow-sm);
+        }
+
+        .skills {
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+        }
+
+        .skills h2 {
+                font-size: var(--text-lg);
+        }
+
+        .skills p {
+                color: var(--gray-400);
+        }
+
+        @media (min-width: 400px) {
+                .skills {
+                        display: grid;
+                        grid-template-columns: repeat(2, auto);
+                        gap: 3rem;
+                }
+
+                h1 {
+                        font-size: 25px;
+                }
+        }
+
+        @media (min-width: 768px) {
+                .skills {
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 2.5rem;
+                }
+        }
+
+        @media (min-width: 1024px) {
+                .skills {
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 3rem;
+                }
+        }
+</style>
+
